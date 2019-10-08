@@ -13,6 +13,7 @@ using System.Web;
 using System;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.Azure.CognitiveServices.Vision.ComputerVision.Models;
+using System.IO;
 
 namespace Mimmit
 {
@@ -31,31 +32,36 @@ namespace Mimmit
         {
             try
             {
+                if (string.IsNullOrEmpty(req.Query["url"]))
+                {
+                    throw new System.Exception("image url is missing");
+                }
+                var visionApiKey = Environment.GetEnvironmentVariable("CUSTOM_VISION_API_KEY");
+                var visionApiBaseUrl = Environment.GetEnvironmentVariable("CUSTOM_VISION_API_CATEGORIES");
+
+                var queryString = HttpUtility.ParseQueryString(string.Empty);
+                queryString["visualFeatures"] = "Categories,Tags";
+                var requestURI = $"{visionApiBaseUrl}{queryString}";
                 var imageUrl = req.Query["url"];
                 var cloudBlobContainer = _blobClient.GetContainerReference("files");
                 var blockBlob = cloudBlobContainer.GetBlockBlobReference(imageUrl);
                 await blockBlob.FetchAttributesAsync();
+                byte[] imageBytes;
+                using(var imageStream = await blockBlob.OpenReadAsync()) {
+                    var binaryReader = new BinaryReader(imageStream);
+                    imageBytes = binaryReader.ReadBytes((int)imageStream.Length);
+                }
 
-                using (var wb = new HttpClient())
+                using (var client = new HttpClient())
+                using (var byteContent = new ByteArrayContent(imageBytes))
                 {
-                    if (string.IsNullOrEmpty(req.Query["url"]))
-                    {
-                        throw new System.Exception("image url is missing");
-                    }
-
-                    wb.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", Environment.GetEnvironmentVariable("CUSTOM_VISION_API_KEY"));
-
-                    byte[] bytes = new byte[blockBlob.Properties.Length];
-                    await blockBlob.DownloadToByteArrayAsync(bytes, 0);
-
-                    using (var byteContent = new ByteArrayContent(bytes))
-                    {
-                        byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                        var response = await wb.PostAsync(Environment.GetEnvironmentVariable("CUSTOM_VISION_API_CATEGORIES"), byteContent);
-                        var responseInString = await response.Content.ReadAsStringAsync();
-                        var result = JsonConvert.DeserializeObject<ImageAnalysis>(responseInString);
-                        return new OkObjectResult(result.Tags);
-                    }
+                    client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", visionApiKey);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                    var response = await client.PostAsync(requestURI, byteContent);
+                    response.EnsureSuccessStatusCode();
+                    var responseInString = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<ImageAnalysis>(responseInString);
+                    return new OkObjectResult(result.Tags);
                 }
             }
             catch (System.Exception e)

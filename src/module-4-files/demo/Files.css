@@ -4,10 +4,15 @@
 }
 
 .demo-files-table th,
-td {
+td, th {
     padding: 10px;
 }
-
+th {
+    text-align: left;
+}
+textarea {
+    margin-left: 10px;
+}
 .demo-files-table th {
     background: #222;
     color: #fff;
