@@ -1,0 +1,19 @@
+.demo-counter {
+    width: 300px;
+}
+.demo-counter-controls {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.demo-counter-value {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.demo-counter-controls button {
+    width: 100%;
+    height: 30px;
+}

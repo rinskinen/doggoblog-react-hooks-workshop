@@ -1,0 +1,19 @@
+.demo-files-table {
+    border: 1px solid #222;
+    margin-bottom: 20px;
+}
+
+.demo-files-table th,
+td {
+    padding: 10px;
+}
+
+.demo-files-table th {
+    background: #222;
+    color: #fff;
+    text-align: left;
+}
+
+.demo-files-table tr:nth-child(odd) td {
+    background: #ccc;
+}
