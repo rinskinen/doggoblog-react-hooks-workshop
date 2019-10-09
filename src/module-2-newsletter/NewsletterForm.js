@@ -1,5 +1,5 @@
-import React from "react";
-import "./NewsletterForm.css";
+import React from 'react';
+import './NewsletterForm.css';
 
 function NewsletterForm() {
     const onSubmit = event => {
@@ -10,17 +10,9 @@ function NewsletterForm() {
         <div className="newsletter">
             <h1>Subscribe to newsletter</h1>
             <form onSubmit={onSubmit}>
-                <input
-                    className="newsletter-input"
-                    name="fullName"
-                    type="text"
-                />
+                <input className="newsletter-input" name="fullName" type="text" />
                 <input className="newsletter-input" name="email" type="email" />
-                <input
-                    className="newsletter-input"
-                    type="submit"
-                    value="Submit"
-                />
+                <input className="newsletter-input" type="submit" value="Submit" />
             </form>
         </div>
     );

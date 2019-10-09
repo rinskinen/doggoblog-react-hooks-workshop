@@ -1,6 +1,6 @@
-import React from "react";
-import DropZone from "../../general/DropZone";
-import "./Files.css";
+import React from 'react';
+import DropZone from '../../general/DropZone';
+import './Files.css';
 
 function Files() {
     const [files, setFiles] = React.useState([]);
@@ -42,9 +42,7 @@ function Files() {
                                 <td>{f.type}</td>
                                 <td>{f.lastModifiedDate.toLocaleString()}</td>
                                 <td>
-                                    <button onClick={() => deleteFile(f.name)}>
-                                        Remove
-                                    </button>
+                                    <button onClick={() => deleteFile(f.name)}>Remove</button>
                                 </td>
                             </tr>
                         );
@@ -59,9 +57,7 @@ function Files() {
             <DropZone onImagesDropped={onImagesDropped} />
             <h1>Files</h1>
             <Table />
-            {files.length > 0 && (
-                <button onClick={deleteAllFiles}>Remove all</button>
-            )}
+            {files.length > 0 && <button onClick={deleteAllFiles}>Remove all</button>}
         </div>
     );
 }

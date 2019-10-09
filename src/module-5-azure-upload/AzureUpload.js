@@ -1,6 +1,6 @@
-import React from "react";
-import DropZone from "../general/DropZone";
-import "./AzureUpload.css";
+import React from 'react';
+import DropZone from '../general/DropZone';
+import './AzureUpload.css';
 
 function AzureUpload() {
     const [files, setFiles] = React.useState([]);
@@ -15,9 +15,7 @@ function AzureUpload() {
 
     function upload() {
         // ajax
-
         // clear the files
-
         // alert on success
     }
 
@@ -46,9 +44,7 @@ function AzureUpload() {
                                 <td>{f.type}</td>
                                 <td>{f.lastModifiedDate.toLocaleString()}</td>
                                 <td>
-                                    <button onClick={() => deleteFile(f.name)}>
-                                        Remove
-                                    </button>
+                                    <button onClick={() => deleteFile(f.name)}>Remove</button>
                                 </td>
                             </tr>
                         );
@@ -63,9 +59,7 @@ function AzureUpload() {
             <DropZone onImagesDropped={onImagesDropped} />
             <h1>Files</h1>
             <Table />
-            {files.length > 0 && (
-                <button onClick={upload}>Upload to Azure!</button>
-            )}
+            {files.length > 0 && <button onClick={upload}>Upload to Azure!</button>}
         </div>
     );
 }

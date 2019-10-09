@@ -1,5 +1,5 @@
-import React from "react";
-import "./CustomVision.css";
+import React from 'react';
+import './CustomVision.css';
 
 function CustomVision() {
     return (

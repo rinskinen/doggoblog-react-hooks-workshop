@@ -1,5 +1,5 @@
-import React from "react";
-import "./Blog.css";
+import React from 'react';
+import './Blog.css';
 
 function BlogPost() {
     return (

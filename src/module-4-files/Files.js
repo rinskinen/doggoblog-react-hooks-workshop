@@ -1,12 +1,9 @@
-import React from "react";
-import "./Files.css";
+import React from 'react';
+import './Files.css';
 
 function Files() {
-
     // This function should be passed to DropZone component
-    const onImagesDropped = React.useCallback(files => {
-        
-    }, []);
+    const onImagesDropped = React.useCallback(files => {}, []);
 
     function Table() {
         return (

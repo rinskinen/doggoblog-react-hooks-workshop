@@ -1,10 +1,8 @@
-import React from "react";
-import "./Counter.css";
+import React from 'react';
+import './Counter.css';
 
 function Counter() {
-    const [count, setCount] = React.useState(
-        Number(localStorage.getItem("count")) || 0
-    );
+    const [count, setCount] = React.useState(Number(localStorage.getItem('count')) || 0);
 
     const setValidCount = value => {
         const newValue = count + value;
@@ -20,7 +18,7 @@ function Counter() {
     };
 
     React.useEffect(() => {
-        localStorage.setItem("count", count.toString());
+        localStorage.setItem('count', count.toString());
     }, [count]);
 
     return (
@@ -31,11 +29,7 @@ function Counter() {
                 <button onClick={() => setValidCount(1)}>+ 1</button>
                 <button onClick={() => setValidCount(5)}>+ 5</button>
                 <button onClick={() => setCount(0)}>Reset</button>
-                <button
-                    onClick={() => setCount(Math.round(Math.random() * 25))}
-                >
-                    Random
-                </button>
+                <button onClick={() => setCount(Math.round(Math.random() * 25))}>Random</button>
                 <button onClick={() => setValidCount(-5)}>- 5</button>
                 <button onClick={() => setValidCount(-1)}>- 1</button>
             </div>
