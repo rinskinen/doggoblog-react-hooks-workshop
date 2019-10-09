@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "STORAGE_CONNECTION_STRING": "UseDevelopmentStorage=true",
+    "CUSTOM_VISION_API_CATEGORIES": "",
+    "CUSTOM_VISION_API_KEY": ""
+  },
+  "Host": {
+    "LocalHttpPort": 7071,
+    "CORS": "*"
+  }
+}
