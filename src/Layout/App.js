@@ -15,8 +15,8 @@ import AzureDownload from '../module-6-azure-download/AzureDownload';
 import AzureDownloadExample from '../module-6-azure-download/demo/AzureDownload';
 import AzureUploadExample from '../module-5-azure-upload/demo/AzureUpload';
 import usePersistedTabIndex from './usePersistedTabIndex';
-import CustomVision from '../module-7-custom-vision/CustomVision';
-import CustomVisionExample from '../module-7-custom-vision/demo/CustomVision';
+import ComputerVision from '../module-7-computer-vision/ComputerVision';
+import ComputerVisionExample from '../module-7-computer-vision/demo/ComputerVision';
 
 function App() {
     const { selectedIndex, onSelect } = usePersistedTabIndex();
@@ -57,11 +57,11 @@ function App() {
                     </Tab>
                     <Tab>
                         <h3>Module 6</h3>
-                        <span>Fetch images</span>
+                        <span>Download from Azure</span>
                     </Tab>
                     <Tab>
                         <h3>Module 7</h3>
-                        <span>Custom Vision API</span>
+                        <span>Computer Vision API</span>
                     </Tab>
 
                     <Tab>
@@ -75,14 +75,12 @@ function App() {
                 </TabPanel>
 
                 <TabPanel>{useExamples ? <BlogPostExample /> : <BlogPost />}</TabPanel>
-
                 <TabPanel>{useExamples ? <NewsletterFormExample /> : <NewsletterForm />}</TabPanel>
-
                 <TabPanel>{useExamples ? <CounterExample /> : <Counter />}</TabPanel>
                 <TabPanel>{useExamples ? <FileUploadExample /> : <FileUpload />}</TabPanel>
                 <TabPanel>{useExamples ? <AzureUploadExample /> : <AzureUploadExample />}</TabPanel>
                 <TabPanel>{useExamples ? <AzureDownloadExample /> : <AzureDownload />}</TabPanel>
-                <TabPanel>{useExamples ? <CustomVisionExample /> : <CustomVision />}</TabPanel>
+                <TabPanel>{useExamples ? <ComputerVisionExample /> : <ComputerVision />}</TabPanel>
                 <TabPanel>
                     <p>Module 8</p>
                 </TabPanel>

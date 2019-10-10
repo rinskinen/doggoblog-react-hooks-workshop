@@ -7,4 +7,4 @@ export const FileListUri = `${baseUrl}getImages`;
 // URI for azure function returning single image
 export const FileByIdUri = `${baseUrl}getimage?id=`;
 // URI for azure function for analyzing saved image with Cognitive services
-export const CustomVisionUri = `${baseUrl}CustomVisionCategories`;
+export const ComputerVisionUri = `${baseUrl}CustomVisionCategories`;
