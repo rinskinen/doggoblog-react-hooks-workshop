@@ -51,6 +51,8 @@ namespace Mimmit
         private async Task<string> UploadFileToStorage(byte[] fileStream, MediaTypeHeaderValue contentType, string fileName)
         {
             CloudBlobContainer container = _blobClient.GetContainerReference("files");
+            
+            await container.CreateIfNotExistsAsync();
 
             CloudBlockBlob blockBlob = container.GetBlockBlobReference(fileName);
 
