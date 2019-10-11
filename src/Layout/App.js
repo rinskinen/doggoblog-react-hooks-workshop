@@ -63,11 +63,6 @@ function App() {
                         <h3>Module 7</h3>
                         <span>Computer Vision API</span>
                     </Tab>
-
-                    <Tab>
-                        <h3>Module 8</h3>
-                        <span>Bonus</span>
-                    </Tab>
                 </TabList>
 
                 <TabPanel>
@@ -81,9 +76,6 @@ function App() {
                 <TabPanel>{useExamples ? <AzureUploadExample /> : <AzureUploadExample />}</TabPanel>
                 <TabPanel>{useExamples ? <AzureDownloadExample /> : <AzureDownload />}</TabPanel>
                 <TabPanel>{useExamples ? <ComputerVisionExample /> : <ComputerVision />}</TabPanel>
-                <TabPanel>
-                    <p>Module 8</p>
-                </TabPanel>
             </Tabs>
         </div>
     );
