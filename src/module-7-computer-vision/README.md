@@ -1,4 +1,4 @@
-# Module 6 - Analyze image with Azure Computer Vision
+# Module 7 - Analyze image with Azure Computer Vision
 
 Analyzing images is nothing new, but it has never been as easy as with Azure Computer Vision. Basically you create account for using Computer Vision and start sending images. You can use raw REST-based API or use SDK available in multiple languages.
 

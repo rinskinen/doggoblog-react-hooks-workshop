@@ -5,7 +5,7 @@ function Welcome() {
         <div>
             <h1>Mimmit ja Zure koodaa!</h1>
             <p>
-                The workshop consists of 7 modules and a bonus module
+                The workshop consists of 7 modules:
                 <ul>
                     <li>
                         Module 1: Introduction to basic html elements and React components by creating a simple blog

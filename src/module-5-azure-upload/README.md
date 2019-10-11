@@ -10,7 +10,7 @@ Your assignment is to in some way send files you have added to your application 
 
 The assignment can be divided into three steps:
 
-1. Create an AJAX requesto to file upload endpoint (URI is available from constant FileUploadUri)
+1. Create an AJAX request to file upload endpoint (URI is available from constant FileUploadUri)
 1. Remove the files from component state
 1. Display alert message to inform user that the files have been uploaded
 
