@@ -15,6 +15,7 @@ CSS can be applied directly to style attribute of the element or by referencing 
 -   Add few paragraphs
 -   Add blockquote element (you can also make it stand out a bit with CSS)
 -   Add image (you can use google image search)
+-   Try to add at least some of the elements as reusable React components
 
 ### Bonus exercises
 
