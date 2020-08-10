@@ -10,7 +10,7 @@ However, we need to find out some details about the files we are about to upload
 
 ## Excercise
 
-- Finish table component in `FileUpload.js`:
+- Finish table component in `File.js`:
   - Add table headers
   - Add table row for each of the uploaded file - Add table cells for file name, size (kb), type & last modified date
   - Display "No files yet" text above the table if there are no uploaded files

@@ -1,8 +1,25 @@
 .blog {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 2rem;
+}
+
+.maintitle {
+    font-size: 3rem;
+    font-style: bold;
 }
 
 .blog-blockquote {
+    background-color: pink;
 }
 
-.blog-image-left {
+.blog-image-fluffy {
+    margin: 1rem;
+}
+
+footer {
+    background-color: black;
+    color: pink;
+    padding: 2rem;
+    width: 100%;
 }

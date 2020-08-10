@@ -41,5 +41,9 @@
     "printWidth": 120,
     "singleQuote": true,
     "tabWidth": 4
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Zure/mimmit-koodaa-2019.git",
+  "author": "rinskinen <riina.j.moilanen@gmail.com>",
+  "license": "MIT"
 }

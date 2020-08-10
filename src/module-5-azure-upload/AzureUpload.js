@@ -2,7 +2,7 @@ import React from 'react';
 import DropZone from '../general/DropZone';
 import './AzureUpload.css';
 
-function AzureUpload() {
+function AzureUpload(url) {
     const [files, setFiles] = React.useState([]);
 
     const onImagesDropped = React.useCallback(files => {
@@ -13,10 +13,16 @@ function AzureUpload() {
         setFiles(prev => prev.filter(file => file.name !== name));
     }
 
-    function upload() {
+    async function upload() {
         // ajax
-        // clear the files
-        // alert on success
+        const resp = await fetch(url);
+        if (resp.ok) {
+            const json = await resp.json();
+            setFiles(json);
+            alert('Your doggopic iz on its way to the cloudz =)');
+        } else {
+            alert("Your doggopic did not make it's way to the cloudz...");
+        }
     }
 
     function Table() {

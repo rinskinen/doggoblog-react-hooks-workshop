@@ -38,21 +38,21 @@ function DropZone({ onImagesDropped }) {
 
     return (
         <React.Fragment>
-            <h1>Upload</h1>
+            <h1>Upload doggopics</h1>
             <p>
-                <strong>Accepted file types:</strong> {allowedFileTypes.join(', ')}{' '}
+                <strong>Accepted doggofile types:</strong> {allowedFileTypes.join(', ')}{' '}
             </p>
             <div className="dropzone" {...getRootProps()}>
                 <input {...getInputProps()} />
                 {isDragActive ? (
-                    <p>Drop the images here ...</p>
+                    <p>Drop the doggoimages here ...</p>
                 ) : (
-                    <p>Drag &rsquo;n&rsquo; drop some images here, or click to select</p>
-                )}
+                        <p>Drag &rsquo;n&rsquo; drop some doggoimages herre, or click to select</p>
+                    )}
             </div>
             <label style={{ display: 'none' }}>
                 <input type="checkbox" checked={preview} onChange={() => setPreview(prevValue => !prevValue)} />
-                Show image preview
+                Show doggoimage preview
             </label>
             {preview && (
                 <div className="dropzone-images">

@@ -9,10 +9,12 @@ function Files() {
         setFiles(files);
     }, []);
 
+    //Poistetaan kaikki tiedostot, joiden key on name
     function deleteFile(name) {
         setFiles(prev => prev.filter(file => file.name !== name));
     }
 
+    //setFilesiin annetaan tyhjä arvo, jolloin korvaa arrayn kokonaan
     function deleteAllFiles() {
         setFiles([]);
     }

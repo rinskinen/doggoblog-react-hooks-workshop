@@ -17,6 +17,9 @@ function Counter() {
         return setCount(newValue);
     };
 
+    //LifeCycle-metodi, jolla voidaan tehdä tiettyjä asioita komponentin eri vaiheissa sen elinkaarta
+    //Tässä aina, kun count vaihtuu, useEffect suoritetaan
+    //Vrt componentDidMount jne!
     React.useEffect(() => {
         localStorage.setItem('count', count.toString());
     }, [count]);
